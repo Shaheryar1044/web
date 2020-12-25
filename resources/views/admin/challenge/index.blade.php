@@ -83,7 +83,7 @@
 										<td>@php
 												$file = \App\ChallengeFile::where('challenge_id' ,'=', $challenge->id)->first();
 											@endphp
-											<img style="width:60px;margin:0px !important" src="{{$file['file_path']}}" /></td>
+											<img style="width:60px;margin:0px !important" src="{{asset($file['file_path'])}}" /></td>
                                         <td>
                                             <a href="{{route('challengeEdit',[$challenge->id])}}" class="btn btn-sm btn-success edit-button">Edit</a>
                                             <a href="{{route('challengeDelete',[$challenge->id])}}" class="btn btn-sm btn-danger update-button">Delete</a>
