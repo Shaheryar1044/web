@@ -21,7 +21,7 @@
             height: 100vh;
             opacity: 1;
             max-width: 100%;
-			background-image: url('{{$temp}}') !important;
+			background-image: url('{{asset($temp)}}') !important;
             background-repeat: no-repeat;
             background-size: cover;
             z-index: 999999;
@@ -219,7 +219,7 @@
         function start_puzzle(){
             // swal("Success", "Challenge Started Successfully!", "success");
         	 setTimeout(() => {
-				 window.location.href='/game-start/{{$adventure->event_id}}/{{$groupId}}';
+				 window.location.href='{{url("/game-start/".$adventure->event_id."/".$groupId)}}';
             },1000);
 		}
     </script>

@@ -167,7 +167,7 @@
 </style>
 @endpush
 @section('content')
-    <div id="body_screen4" style="background:url('{{$adventure->edition->image}}')">
+    <div id="body_screen4" style="background:url('{{asset($adventure->edition->image)}}')">
     {{--top section--}}
         <section class="top-section">
             <div class="container-fluid">
@@ -1217,7 +1217,7 @@
             background-color: #000;
         }
     </style>
-    <script src="/public/js/jquery.jqZoom.js"></script>
+    <script src="{{asset('public/js/jquery.jqZoom.js')}}"></script>
 
     <script>
         $(function(){
@@ -1282,7 +1282,8 @@
                 data:form,
 
                 success: function(response){
-                    window.location = "/congrats-page/"+'{{$adventure->event_id}}/{{$group_id}}';
+                    window.location = "{{asset('congrats-page/'.$adventure->event_id.'/'.$group_id)}}";
+                    	
                 }, error: function(error){
                     console.log('error');
                     console.log(error);

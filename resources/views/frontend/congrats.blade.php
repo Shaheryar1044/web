@@ -128,7 +128,7 @@
 
 @section('content')
 
-    <div id="body_screen4" @if($save_data->adventure->final_template->type != 2) style="background:url('{{$img}}')" @endif>
+    <div id="body_screen4" @if($save_data->adventure->final_template->type != 2) style="background:url('{{asset($img)}}')" @endif>
 
 @if($save_data->adventure->final_template->type == 2)
 
