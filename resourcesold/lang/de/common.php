@@ -1,0 +1,33 @@
+<?php
+
+return [
+    'text' => 'Herzlich Willkommen bei Cluemasters,',
+    'text1' => 'bitte gib hier Deine EVENT ID ein',
+    'text2' => 'ein',
+    'text3' => 'Abenteuer beginnen',
+    'text4' => 'Code nicht übereinstimmend',
+    'text5' => 'Du hast die Schaltfläche betätigt.',
+    'text6' => 'TEAM MODUS',
+    'text7' => 'Wähle jetzt Dein Team und tretet gemeinsam gegen die anderen Teams an',
+    'text8' => 'wählen',
+    'text9' => 'Personen',
+    'text10' => 'Team',
+    'text11' => 'Jetzt anfangen',
+    'text12' => 'Was bisher geschah ...',
+	'text13' => 'Bitte Sound einschalten und auf `Play´ klicken',
+	'text14' => 'HERZLICHEN GLÜCKWUNSCH',
+	'text15' => 'Wir haben alle Schlösser geöffnet. Und den Professor gefunden.',
+	'text16' => 'Hast du keinen Code? Dann besuche unseren',
+	'text17' => 'Code bestätigen',
+	'text18' => 'Alle Rätsel gelöst',
+	'text19' => 'HERZLICHEN GLÜCKWUNSCH',
+	'text20' => 'Rätsel gelöst',
+	'text21' => 'Nächster Hinweis',
+	'text22' => 'Ohne weiteren Hinweis versuchen',
+	'text23' => 'Zur Lösung',
+	'text24' => 'Code bestätigen',
+    
+    'text25' => 'Gratulation! Du gehörst zum Gewinner Team!!!',
+    'text26' => "Nicht traurig sein! Ich wette, beim nächsten Mal werdet Ihr mehr Glück haben!",
+    'text27' => 'Mein Team',
+];

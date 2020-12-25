@@ -1,0 +1,231 @@
+/* font-families */
+
+@font-face {
+    font-family: 'Segoe UI Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Segoe UI Regular'), url('fonts/Segoe UI.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Segoe UI Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Segoe UI Italic'), url('fonts/Segoe UI Italic.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Segoe UI Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Segoe UI Bold'), url('fonts/Segoe UI Bold.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Segoe UI Bold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Segoe UI Bold Italic'), url('fonts/Segoe UI Bold Italic.woff') format('woff');
+}
+
+/* my custom styling for screen4 */
+
+#body_screen4{
+    height: auto;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+.head-top-left{
+    font-family:'Segoe UI Regular';
+    text-align: center;
+    color: white;
+    font-size: 23px;
+    margin-bottom: 2px;
+}
+
+.head-top-left-2{
+    text-align: center;
+    color: white;
+    font-size: 13px;
+}
+
+.head-top-right{
+    font-family:'Segoe UI Regular';
+    text-align: center;
+    color: #E74218;
+    font-size: 46px;
+    font-weight: bolder;
+}
+
+.main-section-para{
+    font-family: 'Segoe UI REGULAR';
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.loop-section{
+    background: #ffffffa1;
+    height: 70vh;
+    margin-left: 14rem;
+    margin-right: 14rem;
+}
+
+.loop-section .container {
+}
+
+.loop-img{
+    margin-top: 64px;
+}
+
+.question-icon{
+    text-align: right;
+    color: white;
+    background: #E74218;
+    padding: 19px 23px;
+    border-radius: 100%;
+    position: fixed;
+    right: 13px;
+    bottom: 11px;
+}
+
+.top-section{
+    height: 12vh;
+}
+
+.hint-section{
+    height: 18vh;
+}
+
+.lock-img{
+    width: 200px;
+    position: absolute;
+    top: 36rem;
+    left: 9rem;
+    border: 3px solid white;
+}
+
+/* responsiveness */
+@media screen and (max-width: 600px) {
+    .loop-section{
+        margin-left: 3rem !important;
+        margin-right: 3rem !important;
+    }
+
+    p.head-top-left {
+        font-size: 14px;
+    }
+
+    p.head-top-left-2 {
+        font-size: 11px;
+    }
+
+    p.head-top-right {
+        font-size: 26px;
+    }
+
+    .container-fluid {
+        padding-top: 14px;
+    }
+
+    p.main-section-para.px-5 {
+        padding: 0px !important;
+        font-size: 14px;
+    }
+
+    img.img-fluid.w-50.loop-img {
+        width: 164px !important;
+        margin: 0px;
+    }
+
+    .lock-img{
+        top: 29rem;
+        left: 1rem;
+    }
+}
+
+.modal-dialog-full-width {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width:none !important;
+
+}
+
+.modal-content-full-width  {
+    height: auto !important;
+    min-height: 100% !important;
+    border-radius: 0 !important;
+    background-color: #264b59bd !important;
+}
+
+.modal-header-full-width  {
+
+}
+
+.modal-footer-full-width  {
+
+}
+
+.modal-header-full-width.modal-header.text-center {
+    border: none;
+}
+
+.hint-number {
+    color: white;
+    background: #E74218;
+    padding: 5px 19px;
+    border-radius: 100%;
+    font-size: 27px;
+
+}
+
+.close-icon {
+    color: #E74218;
+    font-size: 31px;
+}
+
+.hint-heading{
+    color: white;
+}
+
+.hint-para{
+    color: white;
+}
+
+.prev-button {
+    float: left;
+    background: #E74218;
+    padding: 12px 63px !important;
+}
+
+.prev-button:hover {
+    background: #E74218 !important;
+}
+
+.next-button {
+    float: left;
+    background: #E74218;
+    padding: 12px 35px !important;
+}
+
+.next-button:hover {
+    background: #E74218 !important;
+}
+
+.hint-number-exclamation{
+    color: white;
+    background: #E74218;
+    padding: 0px 24px;
+    border-radius: 100%;
+    font-size: 39px;
+}
+
+#exampleModalPreview2 {
+    margin-right: 13px !important;
+}

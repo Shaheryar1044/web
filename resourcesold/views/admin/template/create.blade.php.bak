@@ -1,0 +1,102 @@
+@extends('admin.layouts.app')
+
+@section('content')
+<div class="container customContainer">
+    <div class="row customRow">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Create an escape template</div>
+
+                <div class="card-body">
+                   @if (session('status'))
+                         <div class="alert alert-success" role="alert">
+                            {{ session('message') }}
+                         </div>
+                    @endif
+                    <form method="post" action="{{route('storeTemplate')}}" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label>Template Name</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" name="name" placeholder="for example escape the virus"  value="{{ old('name') }}" class="form-control"> 
+
+                                    @if($errors->has('name'))
+                                        <p style="color:red;">{{ $errors->first('name') }}</p>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                         <div class="form-group">    
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label>Part of the series?</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="radio" name="is_part" id= 'yes' {{ old('is_part') == 'yes' ? 'checked' : '' }} value="yes"> <label for ='yes'>Yes</label>
+                                    <input type="radio" name="is_part" id='no' value="no" {{ old('is_part') == 'no' ? 'checked' : '' }}><label for="no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label>Which part of series?</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="radio" name="series"   id= 'first' value="1" {{ old('series') == 1 ? 'checked' : '' }}> <label for ="first">1</label>
+
+                                    <input type="radio" name="series" id='second' value="2" {{ old('series') == 2 ? 'checked' : '' }}>
+                                    <label for="second">2</label>
+
+                                    <input type="radio" name="series" id='third' value="3" {{ old('series') == 3 ? 'checked' : '' }}>
+                                    <label for="third">3</label>
+                                </div>
+                            </div>
+                            </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label>Edit template picture</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="addBox" style="margin: 0px;">
+                                        <p id="pp">Preparing files for loading</p>
+                                        <p id="pp">or</p>
+                                        <label id="label" for="upload-photo">Select file<label>
+                                        <input type="file"name="image"  required="" id="upload-photo" accept="image/*" class="form-control"> 
+                                    </div>
+                                    @if($errors->has('image'))
+                                        <p style="color:red;">{{ $errors->first('image') }}</p>
+                                    @endif
+                                </div>
+                            </div>
+                            </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label>Edit template sound</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="file" required=""  name="audio" accept="audio/*" class="form-control"> 
+                                     @if($errors->has('audio'))
+                                        <p style="color:red;">{{ $errors->first('audio') }}</p>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <input type="submit" name="submit" value="Solve & back" class="customBtnClass btn btn-default">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="submit" name="submit" value="New template edition" class="customBtnClass btn btn-default">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
