@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::group(['middleware' => ['auth', 'user']], function(){
-
+      
 	Route::get('dashboard','FrontEndController@index')->name('dashboard');
 
 });
