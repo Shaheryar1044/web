@@ -37,20 +37,20 @@
     <img onclick="window.location.href='{{route('setLocale',['de'])}}'" src="{{asset('images/german.png')}}" style="cursor:pointer;width: 40px;height:40px;" />
     <img onclick="window.location.href='{{route('setLocale',['en'])}}'"  src="{{asset('images/usa.png')}}" style="cursor:pointer;width: 40px;height:40px;" />
 	<img onclick="window.location.href='{{route('setLocale',['fr'])}}'"  src="{{asset('images/france.png')}}" style="cursor:pointer;width: 40px;height:40px;" />
-	
+
 	@endif
 
-                                   
-                         
+
+
 </div>
                             @guest
-                            
+
                                 <a class="nav-link pull-right" style="color:#fff;" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            
+
                             @if (Route::has('register'))
-                                
+
                                     <a class="nav-link pull-right " style="color:#fff;" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                
+
                             @endif
                         @else
                             <a id="navbarDropdown" style="color:#fff;" class="nav-link dropdown-toggle pull-right" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -67,7 +67,7 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-                        
+
                                 </div>
                                 @endguest
 @yield('content')

@@ -16,7 +16,7 @@
         .customRowArea{
             padding: 50px;
             text-align: center;
-            display: flex;
+            display: block;
             justify-content: center;
             flex-direction: column;
         }
@@ -51,7 +51,7 @@
             border-bottom: 2px solid #efefef;
             background: transparent;
             width: 100%;
-            
+
         }
         .customFomInputStyle:focus{
             border-bottom: 2px solid #efefef;
@@ -92,6 +92,7 @@
             width: 100px;
             transform: rotate(-33deg);
             top: 90px;
+            display: block;
         }
         .customImageQuestionMark2{
             position: absolute;
@@ -104,6 +105,7 @@
 		.custompara2 {
 			color: white;
 			font-size: 14px;
+            display: block;
 		}
 
         @media (max-width: 676px) {
@@ -129,6 +131,13 @@
                 color: #fff;
                 font-size: 18px;
             }
+            .customRowArea{
+                padding: 0px !important;
+            }
+            .customImage{
+                padding-top: 34px;
+                padding-bottom: 0px;
+            }
         }
         ::placeholder {
           color: #fff;
@@ -145,11 +154,11 @@
             @csrf
             <div class="customInputForms">
                 <input type="name" name="name" value="{{ old('name') }}" required placeholder="Enter your name" autofocus="on"  class="customFomInputStyle" style="margin-bottom: 35px;" />
-                
+
                 <input type="password" name="password" placeholder="Enter your password"   class="customFomInputStyle"  />
-                
+
             </div>
-            
+
             <button class="customButton" type="submit">
                 <span id="textArea">{{ __('Login') }}</span>
                 <i class="fa fa-refresh fa-spin" id="loader" style="display: none;"></i>

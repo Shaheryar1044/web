@@ -8,15 +8,21 @@
     <link rel="stylesheet" href="{{asset('public/css/jquery.jqZoom.css')}}" type="text/css"/>
 <style>
 	html{
-		background:url('{{asset($adventure->edition->image)}}');
+		background:url('{{$adventure->edition->image}}');
 		background-repeat:no-repeat;
 		background-size:cover;
+	}
+	#body_screen4{
+		height: -webkit-fill-available !important;
 	}
 	.viewer-box{
 		left:420px !important;
 	}
 	.loop-section {
-		background: rgba(255, 255, 255, 0.5) !important;
+		background: rgb(255 255 255 / 79%) !important;
+		min-height: fit-content !important;
+		max-height: fit-content !important;
+		padding-bottom: 14px;
 	}
 	.main-text-challenge {
 		display: flex;
@@ -39,24 +45,40 @@
 	.main-section-para{
 		font-size: 17px;
 	}
-	@media (max-width:2000px) and (min-width:1500px) {
-		.zoom-box {
-			width:100% !important;
+	.zoom-box {
+		width:100% !important;
+	}
+	@media screen and (max-width: 2000px) and (min-width: 500px) {
+		#value1, #value2, #value3 {
+			bottom: 10rem !important;
 		}
+	}
+	@media screen and (max-width: 1049px) and (min-width: 991px) {
+		.classImage {
+			padding-bottom: 20px;
+		}
+	}
+	@media (max-width:2000px) and (min-width:1500px) {
 		.zoom-box img {
-			    vertical-align: bottom;
-				margin-bottom: 20px;
-				height: 440px;
-				object-fit: fill;
-				width: 740px;
+			vertical-align: bottom;
+			margin-bottom: 20px;
+			height: 440px;
+			object-fit: fill;
+			width: 740px;
 		}
 	}
 	@media (max-width:991px) {
+		#value1, #value2, #value3 {
+			bottom: -10rem;
+		}
+		.main-text-challenge {
+			text-align: left;
+		}
 		.main-section-para {
 			font-family: 'Segoe UI REGULAR';
-    font-size: 16px;
-    font-weight: normal;
-    margin-top: 2px !important;
+			font-size: 16px;
+			font-weight: 600 !important;
+			margin-top: 2px !important;
 		}
 		.MsoNormal {
 			font-size: 14px;
@@ -83,24 +105,35 @@
 		}
 		.loop-section {
 			background: #ffffffa1;
-    height: 100% !important;
-    margin-left: 0rem;
-    margin-right: 0rem;
-    width: 95%;
-    margin: 0 auto;
+			margin-left: 0rem;
+			margin-right: 0rem;
+			width: 95%;
+			margin: 0 auto;
 		}
 		.wrap {
-    display: flex;
-    justify-content: end;
-    position: absolute;
-    bottom: -63px;
-    left: -65px;
-}
+			display: flex;
+			justify-content: end;
+			position: relative;
+			bottom: -63px;
+			left: -65px;
+		}
 	}
 	.main-text-challenge{
 		justify-content:center;
 	}
 	@media (max-width:500px) {
+		button#exampleModalPreview2 {
+			width: 100%;
+			font-family: 'Segoe UI Regular';
+			margin-bottom: 13px;
+			text-align: center !important;
+		}
+		.responsive-hint-btns button{
+			width: inherit !important;
+			text-align: center !important;
+			font-family: 'Segoe UI Regular';
+			padding: 12px 0px !important;
+		}
 		.main-text-challenge {
 			height: auto;
 		}
@@ -111,33 +144,33 @@
 			bottom: -65px !important;
 		}
 		#sub1{
-			    bottom: -137px !important;
+			bottom: -137px !important;
 		}
 		#add2{
-			    bottom: -64px !important;
+			bottom: -64px !important;
 		}
 		#sub2{
-			    bottom: -137px !important;
-    		left: 147px !important;
+			bottom: -137px !important;
+			left: 147px !important;
 		}
 		#add3{
-			    bottom: -63px !important;
+			bottom: -63px !important;
 		}
 		#sub3{
-			    bottom: -135px !important;
+			bottom: -135px !important;
 		}
 		#submitChallenge{
-			    bottom: -171px !important;
+			bottom: -186px !important;
 		}
 		.wrap {
 			display: flex;
 			justify-content: end;
-			    position: absolute;
-    bottom: 63px;
+			position: relative;
+			bottom: 63px;
 		}
 		.hint-section {
-    height: 30vh;
-}
+			/*height: 30vh;*/s
+		}
 		.main-section-para {
 			font-family: 'Segoe UI REGULAR';
 			font-size: 12px;
@@ -156,9 +189,12 @@
 		.loop-section {
 			background: #ffffffa1;
 			height: 100%;
-			    margin-left: 0px !important;
-    margin-right: 0px !important;
-    margin: 0 auto !important;
+			margin-left: 0px !important;
+			margin-right: 0px !important;
+			margin: 0 auto !important;
+		}
+		#body_screen4{
+			height: 120vh !important;
 		}
 	}
 	#exampleModalPreview2{
@@ -1283,7 +1319,7 @@
 
                 success: function(response){
                     window.location = "{{asset('congrats-page/'.$adventure->event_id.'/'.$group_id)}}";
-                    	
+
                 }, error: function(error){
                     console.log('error');
                     console.log(error);

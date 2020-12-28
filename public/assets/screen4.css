@@ -65,32 +65,36 @@
 .main-section-para{
     font-family: 'Segoe UI REGULAR';
     font-size: 20px;
-    font-weight: bolder;
+    font-weight: normal;
 }
-
-.loop-section{
+.loop-section .container {
+    max-width: 100%;
+    width: 100%;
+}
+.loop-section {
     background: #ffffffa1;
-    height: 70vh;
     margin-left: 14rem;
     margin-right: 14rem;
+    max-height: 80vh;
+    min-height: 70vh;
 }
 
 .loop-section .container {
 }
 
 .loop-img{
-    margin-top: 64px;
+    margin-top: 0px;
 }
 
 .question-icon{
     text-align: right;
     color: white;
     background: #E74218;
-    padding: 19px 23px;
+    padding: 19px 20.5px;
     border-radius: 100%;
     position: fixed;
-    right: 13px;
-    bottom: 11px;
+    right: 23px;
+    bottom: 14px;
 }
 
 .top-section{
@@ -98,7 +102,6 @@
 }
 
 .hint-section{
-    height: 18vh;
 }
 
 .lock-img{
@@ -107,6 +110,15 @@
     top: 36rem;
     left: 9rem;
     border: 3px solid white;
+}
+
+@media (max-width:991px) {
+	.loop-section{
+		background: #ffffffa1;
+		height: auto !important;
+		margin-left: 14rem;
+		margin-right: 14rem;
+	}
 }
 
 /* responsiveness */
@@ -179,7 +191,7 @@
 .hint-number {
     color: white;
     background: #E74218;
-    padding: 5px 19px;
+    padding: 5px 17px;
     border-radius: 100%;
     font-size: 27px;
 
@@ -192,10 +204,18 @@
 
 .hint-heading{
     color: white;
+    font-size: 20px;
+    font-family: 'Segoe UI Regular';
+    font-weight: normal !important;
+    line-height: 26px;
 }
 
 .hint-para{
     color: white;
+    font-size: 20px;
+    font-family: 'Segoe UI Regular';
+    font-weight: normal;
+    line-height: 26px;
 }
 
 .prev-button {
@@ -226,6 +246,61 @@
     font-size: 39px;
 }
 
-#exampleModalPreview2 {
+button#exampleModalPreview2 {
     margin-right: 13px !important;
+}
+
+.next-button:hover {
+    color: white;
+}
+
+button#exampleModalPreview2:hover {
+    color: white;
+}
+.zoom-box img {
+    vertical-align: bottom;
+    margin-bottom: 20px;
+	height: 300px;
+    object-fit: contain;
+}
+button.btn.btn-secondary.text-left.next-button.exampleModalPreview212:hover {
+    color: white;
+}
+button#exampleModalPreview2 {
+    margin-right: 13px !important;
+}
+.MsoNormal {
+    font-size: 17px;
+    font-family: 'Segoe UI Regular';
+    font-weight: bold;
+}
+
+.challenge-pagination{
+    margin-top: 0px;
+    font-weight: 500;
+    font-family: 'Segoe UI Regular';
+    font-weight: 600;
+	margin-bottom:0px
+}
+
+.div1{
+    position:absolute;
+    left: 0.1rem;
+    bottom: 0.2rem;
+}
+
+.div2{
+    position:absolute;
+    left: 0.3;
+    bottom: 0.2rem;
+}
+
+.div3{
+    position:absolute;
+    left: 0.3;
+    bottom: 0.2;
+}
+
+button.close {
+    opacity: inherit;
 }

@@ -9,113 +9,76 @@
 <link href="{{asset('public/assets/mdb.css')}}" rel="stylesheet">
 
 <style>
+.customClassRow {
+		left: 0px !important;
+		padding-left: 24px;
+	}
+	#body_screen4{
+		height: auto !important;
+		min-height: 100vh !important;
+	}
+	.loop-section {
+		min-height: fit-content !important;
+		max-height: fit-content !important;
+	}
+	@media screen and (max-width: 992px) {
+		p.customParagragh.custom-challenge-para {
+			font-size: 12px !important;
+			font-weight: 500;
+			padding-top: 5px;
+			text-align: left;
+		}
+		.loop-section{
+			height: fit-content !important;
+			max-height: fit-content !important;
+		}
+		p.customParagragh {
+			font-size: 14px;
+		}
 
-    .main-section-para {
-
-        font-family: 'Segoe UI REGULAR';
-
-        font-size: 20px;
-
-        font-weight: bolder;
-
-        font-size: 51px;
-
-        color: #1C4251;
-
-        position: relative;
-
-        top: -60px;
-
-    }
-
-    p{
-
-        position: relative;
-
-        top: 0px;
-
-        font-family: system-ui;
-
-        color: #1C4251;
-
-        font-size: 30px;
-
-    }
-
-    .loop-section {
-
-        margin-left: 14rem;
-        min-height:80vh;
-        max-height:110vh;
-        margin-right: 14rem;
-
-        
-        background: rgba(255, 255, 255, 0.5) !important;
-
-    }
-
-    .customFinal{
-
-        color: red;
-
-        font-size: 40px;
-
-        position: relative;
-
-        
-
-        font-weight:bold;
-
-    }
-
-    #myVideo {
-
-          position: fixed;
-
-          right: 0;
-
-          bottom: 0;
-
-          min-width: 100%; 
-
-          min-height: 100%;
-
-        overflow:hidden;
-
-        }
-
-        #myBtn:focus{
-
-            outline:none !important;
-
-        }
-
-    #body_screen4{
-
-        z-index:9999;
-
-    }
-
-    .btnCustomChoose{
-
-            color: #fff;
-
-            background-color: #E74218;
-
-            border: 0px;
-
-            font-size: 14px;
-
-            padding: 10px 22px;
-
-            border-radius: 4px;
-
-            font-weight: bold;
-
-            width:300px;
-
-        }
-
+		.main-section-para {
+			font-family: 'Segoe UI REGULAR';
+			font-size: 20px;
+			font-weight: bolder;
+			font-size: 51px;
+			color: #1C4251;
+			position: relative;
+			top: -60px;
+		}
+		p{
+			position: relative;
+			top: 0px;
+			font-family: system-ui;
+			color: #1C4251;
+			font-size: 13px;
+		}
+	}
+	.customFinal{
+		color: red;
+		font-size: 40px;
+		position: relative;
+		top: 0px;
+		font-weight:bold;
+	}
+	.loop-section {
+		margin-left: 14rem;
+		margin-right: 14rem;
+		background: rgb(255 255 255 / 77%) !important;
+	}
+	#myVideo {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		min-width: 100%;
+		min-height: 100%;
+		overflow:hidden;
+	}
+	#myBtn:focus{
+		outline:none !important;
+	}
+	#body_screen4{
+		z-index:9999;
+	}
 </style>
 
 @endpush
@@ -176,7 +139,7 @@
 
             </div>
 
-        </section> 
+        </section>
 
         {{-- end-top-section --}}
 
@@ -190,7 +153,7 @@
 
                 <div class="row text-center" style="position:relative;top:35px;justify-content:center;">
 
-                    <p class="customParagragh" style="font-weight:bold;top: 0px !important;">
+                    <p class="customParagragh" style="font-weight:bold;top: 0px !important;padding-bottom: 27px;">
 
                             <!-- {!! $save_data->adventure->final_template->final_template_text !!} -->
 
@@ -200,11 +163,11 @@
 
                 </div>
 
-                <div class="row text-center h-50">
+                <div class="row text-center">
 
                     <div class="col-sm-12 my-auto">
 
-                      <p class="customParagragh" style="font-size:23px !important;top: 10px;">
+                      <p class="customParagragh custom-challenge-para" style="top: 10px;">
 
 ;                         @if($locale == 'de')
 
@@ -269,13 +232,13 @@
 
                         @if($group)
 
-                          
+
 
                         <p class="customFinal" style="margin:auto; font-size:25px !important;"><a href="{{url('final-score/'.$code.'/'.$group)}}" style="color:#fff"><img src="{{asset('public/images/score.png')}}" height="130" width="150">  </a> </p>
 
                         <br><br>
 
-                          
+
 
                         @endif
 
@@ -297,7 +260,7 @@
 
                 <div class="col">
 
-                    
+
 
                     <!-- Modal 1-->
 
@@ -547,7 +510,7 @@
 
 <script>
 
-    
+
 
     $(document).ready(function() {
 
@@ -555,7 +518,7 @@
 
     audioElement.setAttribute('src', 'http://www.soundjay.com/misc/sounds/bell-ringing-01.mp3');
 
-    
+
 
     audioElement.addEventListener('ended', function() {
 
@@ -563,7 +526,7 @@
 
     }, false);
 
-    
+
 
     audioElement.addEventListener("canplay",function(){
 
@@ -575,7 +538,7 @@
 
     });
 
-    
+
 
     audioElement.addEventListener("timeupdate",function(){
 
@@ -583,7 +546,7 @@
 
     });
 
-    
+
 
     $('#play').click(function() {
 
@@ -593,7 +556,7 @@
 
     });
 
-    
+
 
     $('#pause').click(function() {
 
@@ -603,7 +566,7 @@
 
     });
 
-    
+
 
     $('#restart').click(function() {
 

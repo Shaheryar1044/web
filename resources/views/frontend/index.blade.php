@@ -14,14 +14,14 @@
             max-width: 100%;
         }
         .customRowArea{
-            padding: 50px;
+            padding: 16px;
             text-align: center;
-            display: flex;
+            display: block;
             justify-content: center;
             flex-direction: column;
         }
         .customPara {
-            display: inline-block;
+            display: block;
             text-align: center;
             letter-spacing: 0px;
             color: #FFFFFF;
@@ -32,6 +32,8 @@
         .customImage{
             width: 260px;
             margin: 0 auto;
+            display: block;
+            padding-top: 12px;
             padding-bottom: 30px;
         }
         .customInputForms{
@@ -82,6 +84,7 @@
             border: 0px;
             color: #fff;
             font-size: 18px;
+            display: block;
         }
         .customLocalImage{
             width: 232px;
@@ -92,6 +95,7 @@
             width: 100px;
             transform: rotate(-33deg);
             top: 90px;
+            display: block;
         }
         .customImageQuestionMark2{
             position: absolute;
@@ -104,6 +108,7 @@
 		.custompara2 {
 			color: white;
 			font-size: 14px;
+            display: block;
 		}
 
         @media (max-width: 676px) {
@@ -236,7 +241,7 @@
                 method:'GET',
 
                 success: function (response) {
-                    
+
                     if(response.status == true) {
                         // swal("Success", "You clicked the button!", "success");
                         setTimeout(() => {
