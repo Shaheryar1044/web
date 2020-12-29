@@ -110,7 +110,14 @@
 			font-size: 14px;
             display: block;
 		}
-
+        @media (max-width: 400px) {
+            .customRowArea{
+                padding-top: 54px !important;
+            }
+            .customClassRow{
+                top: 39px;
+            }
+        }
         @media (max-width: 676px) {
             .customInputForms {
                 width: 100%;

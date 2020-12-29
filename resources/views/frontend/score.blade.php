@@ -14,14 +14,16 @@
             max-width: 100%;
         }
         .customRowArea{
-            padding: 50px;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
+	    margin: auto;
+            padding: 0px;
+ 	    text-align: center;
+ 	    display: block;
+ 	    justify-content: center;
+ 	    flex-direction: column;
+ 	    max-width: fit-content;
         }
         .customPara {
-            display: inline-block;
+            display: block;
             text-align: center;
             letter-spacing: 0px;
             color: #FFFFFF;
@@ -45,7 +47,7 @@
         }
         .customBorderBox {
             padding: 12px 20px;
-            width: 600px;
+            min-width: 600px;
             width:fit-content;
             margin: 15px auto;
             padding-bottom: 0px;
@@ -58,7 +60,7 @@
             padding: 10px 18px;
             border-radius: 4px;
             font-weight: bold;
-           
+
         }
         .btnCustomChoose:focus{
             outline: none;
@@ -80,6 +82,7 @@
         }
         .customImageQuestionMark{
             position: absolute;
+	    display: block;
             width: 100px;
             transform: rotate(-33deg);
             top: 90px;
@@ -93,13 +96,17 @@
             bottom: 65%;
         }
         @media (max-width: 767px) {
+             h1.congrats-text {
+    		font-size: inherit;
+    		padding-top: 12px;
+	 }
             .customRowArea {
-                padding: 50px;
-                text-align: center;
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-                max-width: 100%;
+                padding: 0px;
+ 	    	text-align: center;
+ 	    	display: block;
+ 	    	justify-content: center;
+ 	    	flex-direction: column;
+ 	    	max-width: fit-content;
             }
             .customBorderBox {
                 /*border: 2px solid #E74218;*/
@@ -107,15 +114,16 @@
                 width: 100%;
                 margin: 0 auto;
                 padding-bottom: 0px;
+		min-width: fit-content;
             }
         }
-        hr { 
-            display: block; 
+        hr {
+            display: block;
             height: 1px;
-            border: 0; 
+            border: 0;
             border-top: 2px solid #E74218;
-            margin: 1em 0; 
-            padding: 0; 
+            margin: 1em 0;
+            padding: 0;
         }
     </style>
 @endpush
@@ -132,7 +140,7 @@
                        <!--</div>-->
                     </div>
                     <div class="col-6">
-                        
+
                     </div>
                 </div>
             </div>
@@ -140,33 +148,33 @@
         <div class="row customRowArea">
             <img class="customImageQuestionMark" src="{{asset('images/1stpage-questionmark.png')}}" />
             <img class="customImage" src="{{asset('images/logo_clue-masters.png')}}" />
-            
+
             <span class="customPara">
                 Score
         </span>
-           
+
             <div class="customBorderBox">
-                
-                
+
+
                     @php
                         $count = 0;
                         $winner = 0;
                         $my = 0;
                     @endphp
                     @foreach($adventure->groups as $group)
-                      
+
                         <div class="row customRowAlign" style="flex-wrap: break-word;">
-                            
+
                             <div class="col-md-6 ">
-                                
+
                                 @if($winner == 0 && $group->timer > 0)
                                     @if($group->id == $myGroup->id)
-                                        @php 
+                                        @php
                                             $my++
                                         @endphp
                                     @endif
                                     <span class="teams pull-left" style="color:#54cf54;"> {{$group->name}}</span>
-                                    @php 
+                                    @php
                                         $winner++
                                     @endphp
                                 @else
@@ -174,37 +182,35 @@
                                 @endif
                             </div>
 
-                            <div class="col-md-6" style="text-align: right;">  
+                            <div class="col-md-6" style="text-align: right;">
                                 <button class="btnCustomChoose" style="margin-right: 6px;">{{$group->hintscount}} {{__('common.text28')}}</button>
                                 <button class="btnCustomChoose">{{gmdate("H:i:s",$group->timer)}}</button>
-                                
+
                             </div>
                         </div>
                         <hr>
                     @endforeach
-                
+
             </div>
-            <div style="width: fit-content; margin: auto; border: 1px solid #E74218;background: #e742186e;padding: 14px;">
+            <div style="width: fit-content; margin: auto; border: 1px solid #E74218;background: #e742186e;padding: 14px;min-width: 258px;">
                 @php
                         $count = 0;
                         $winner = 0;
                     @endphp
-                   
+
                         <h4 style="color:#fff;">{{__('common.text27')}}:</h4>
                         <h6 style="color:#fff;">{{$group->name}}</h6>
                         @foreach($myGroup->users as $user)
-                           <p style="color:#E74218;">{{$user->name}}</p> 
+                           <p style="color:#E74218;">{{$user->name}}</p>
                         @endforeach
-                        
+
             </div>
             @if($my > 0)
-            <h1 style="color:#54cf54;">{{__('common.text25')}}</h1>
+            <h1 style="color:#54cf54;" class="congrats-text">{{__('common.text25')}}</h1>
             @else
-            <h1 style="color:#54cf54;">{{__('common.text26')}}</h1>
+            <h1 style="color:#54cf54;" class="congrats-text">{{__('common.text26')}}</h1>
             @endif
             <img class="customImageQuestionMark2" src="{{asset('images/1stpage-questionmark.png')}}" />
         </div>
     </div>
 @endsection
-
-

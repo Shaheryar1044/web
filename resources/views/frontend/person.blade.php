@@ -39,6 +39,7 @@
             font-weight: 500;
         }
         .customImage{
+	    display: block;
             width: 260px;
             margin: 0 auto;
             padding-bottom: 30px;
