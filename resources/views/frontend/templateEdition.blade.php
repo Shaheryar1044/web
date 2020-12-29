@@ -6,201 +6,249 @@
 <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{asset('public/css/jquery.jqZoom.css')}}" type="text/css"/>
-<style>
-	html{
-		background:url('{{$adventure->edition->image}}');
-		background-repeat:no-repeat;
-		background-size:cover;
-	}
-	#body_screen4{
-		height: -webkit-fill-available !important;
-	}
-	.viewer-box{
-		left:420px !important;
-	}
-	.loop-section {
-		background: rgb(255 255 255 / 79%) !important;
-		min-height: fit-content !important;
-		max-height: fit-content !important;
-		padding-bottom: 14px;
-	}
-	.main-text-challenge {
-		display: flex;
-		align-items: center;
-		margin-bottom: 10px;
-	}
-	.MsoNormal {
-		font-size: 17px;
-		font-family: 'Segoe UI Regular';
-		font-weight: bold;
-		display: block !important;
-	}
-	.main-text-challenge{
+    <style>
+        html{
+            background:url('{{$adventure->edition->image}}');
+            background-repeat:no-repeat;
+            background-size:cover;
+        }
+        #body_screen4{
+            height: -webkit-fill-available !important;
+        }
+        .viewer-box{
+            left:420px !important;
+        }
+        .loop-section {
+            background: rgb(255 255 255 / 79%) !important;
+            min-height: fit-content !important;
+            max-height: fit-content !important;
+            padding-bottom: 14px;
+        }
+        .main-text-challenge {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .MsoNormal {
+            font-size: 17px;
+            font-family: 'Segoe UI Regular';
+            font-weight: bold;
+            display: block !important;
+        }
+        .main-text-challenge{
 
-	}
-	.img-fluid {
-		height: auto;
-		max-width: 1024px;
-	}
-	.main-section-para{
-		font-size: 17px;
-	}
-	.zoom-box {
-		width:100% !important;
-	}
-	@media screen and (max-width: 2000px) and (min-width: 500px) {
-		#value1, #value2, #value3 {
-			bottom: 10rem !important;
-		}
-	}
-	@media screen and (max-width: 1049px) and (min-width: 991px) {
-		.classImage {
-			padding-bottom: 20px;
-		}
-	}
-	@media (max-width:2000px) and (min-width:1500px) {
-		.zoom-box img {
-			vertical-align: bottom;
-			margin-bottom: 20px;
-			height: 440px;
-			object-fit: fill;
-			width: 740px;
-		}
-	}
-	@media (max-width:991px) {
-		#value1, #value2, #value3 {
-			bottom: -10rem;
-		}
-		.main-text-challenge {
-			text-align: left;
-		}
-		.main-section-para {
-			font-family: 'Segoe UI REGULAR';
-			font-size: 16px;
-			font-weight: 600 !important;
-			margin-top: 2px !important;
-		}
-		.MsoNormal {
-			font-size: 14px;
-			font-family: 'Segoe UI Regular';
-			font-weight: bold;
-			display: block !important;
-		}
-		.img-fluid {
-			position: relative;
-			top: 29px;
-			max-width: 100%;
-			min-height: 100px;
-			max-height: 185px;
-		}
-		.head-top-right {
-			font-family: 'Segoe UI Regular';
-			text-align: center;
-			color: #E74218;
-			font-size: 25px;
-			font-weight: bolder;
-		}
-		.zoom-box{
-			width:100% !important;
-		}
-		.loop-section {
-			background: #ffffffa1;
-			margin-left: 0rem;
-			margin-right: 0rem;
-			width: 95%;
-			margin: 0 auto;
-		}
-		.wrap {
-			display: flex;
-			justify-content: end;
-			position: relative;
-			bottom: -63px;
-			left: -65px;
-		}
-	}
-	.main-text-challenge{
-		justify-content:center;
-	}
-	@media (max-width:500px) {
-		button#exampleModalPreview2 {
-			width: 100%;
-			font-family: 'Segoe UI Regular';
-			margin-bottom: 13px;
-			text-align: center !important;
-		}
-		.responsive-hint-btns button{
-			width: inherit !important;
-			text-align: center !important;
-			font-family: 'Segoe UI Regular';
-			padding: 12px 0px !important;
-		}
-		.main-text-challenge {
-			height: auto;
-		}
-		.customBox > img {
-			bottom:-150px !important;
-		}
-		#add1{
-			bottom: -65px !important;
-		}
-		#sub1{
-			bottom: -137px !important;
-		}
-		#add2{
-			bottom: -64px !important;
-		}
-		#sub2{
-			bottom: -137px !important;
-			left: 147px !important;
-		}
-		#add3{
-			bottom: -63px !important;
-		}
-		#sub3{
-			bottom: -135px !important;
-		}
-		#submitChallenge{
-			bottom: -186px !important;
-		}
-		.wrap {
-			display: flex;
-			justify-content: end;
-			position: relative;
-			bottom: 63px;
-		}
-		.hint-section {
-			/*height: 30vh;*/s
-		}
-		.main-section-para {
-			font-family: 'Segoe UI REGULAR';
-			font-size: 12px;
-			font-weight: normal;
-			margin-top: 2px !important;
-		}
-		.zoom-box{
-			width:100% !important;
-		}
-		.zoom-box img {
-			vertical-align: bottom;
-			margin-bottom: 20px;
-			height: auto !important;
-			object-fit: contain;
-		}
-		.loop-section {
-			background: #ffffffa1;
-			height: 100%;
-			margin-left: 0px !important;
-			margin-right: 0px !important;
-			margin: 0 auto !important;
-		}
-		#body_screen4{
-			height: 120vh !important;
-		}
-	}
-	#exampleModalPreview2{
-		display:block !important;
-	}
-</style>
+        }
+        .img-fluid {
+            height: auto;
+            max-width: 1024px;
+        }
+        .main-section-para{
+            font-size: 17px;
+        }
+        .zoom-box {
+            width:100% !important;
+        }
+        @media screen and (max-width: 2000px) and (min-width: 500px) {
+            #value1, #value2, #value3 {
+                bottom: 10rem !important;
+            }
+        }
+        @media screen and (max-width: 1049px) and (min-width: 991px) {
+            .classImage {
+                padding-bottom: 20px;
+            }
+        }
+        @media (max-width:2000px) and (min-width:1500px) {
+            .zoom-box img {
+                vertical-align: bottom;
+                margin-bottom: 20px;
+                height: 440px;
+                object-fit: fill;
+                width: 740px;
+            }
+        }
+        @media (max-width:991px) {
+            #value1, #value2, #value3 {
+                bottom: -10rem;
+            }
+            .main-text-challenge {
+                text-align: left;
+            }
+            .main-section-para {
+                font-family: 'Segoe UI REGULAR';
+                font-size: 16px;
+                font-weight: 600 !important;
+                margin-top: 2px !important;
+            }
+            .MsoNormal {
+                font-size: 14px;
+                font-family: 'Segoe UI Regular';
+                font-weight: bold;
+                display: block !important;
+            }
+            .img-fluid {
+                position: relative;
+                top: 29px;
+                max-width: 100%;
+                min-height: 100px;
+                max-height: 185px;
+            }
+            .head-top-right {
+                font-family: 'Segoe UI Regular';
+                text-align: center;
+                color: #E74218;
+                font-size: 25px;
+                font-weight: bolder;
+            }
+            .zoom-box{
+                width:100% !important;
+            }
+            .loop-section {
+                background: #ffffffa1;
+                margin-left: 0rem;
+                margin-right: 0rem;
+                width: 95%;
+                margin: 0 auto;
+            }
+            .wrap {
+                display: flex;
+                justify-content: end;
+                position: relative;
+                bottom: -63px;
+                left: -65px;
+            }
+        }
+        .main-text-challenge{
+            justify-content:center;
+        }
+        @media (max-width:500px) {
+            button#exampleModalPreview2 {
+                width: 100%;
+                font-family: 'Segoe UI Regular';
+                margin-bottom: 13px;
+                text-align: center !important;
+            }
+            .responsive-hint-btns button{
+                width: inherit !important;
+                text-align: center !important;
+                font-family: 'Segoe UI Regular';
+                padding: 12px 0px !important;
+            }
+            .main-text-challenge {
+                height: auto;
+            }
+            .customBox > img {
+                bottom:-150px !important;
+            }
+            #add1{
+                bottom: -65px !important;
+            }
+            #sub1{
+                bottom: -137px !important;
+            }
+            #add2{
+                bottom: -63px !important;
+            }
+            #sub2{
+                bottom: -137px !important;
+                left: 147px !important;
+            }
+            #add3{
+                bottom: -63px !important;
+            }
+            #sub3{
+                bottom: -135px !important;
+            }
+            #submitChallenge{
+                bottom: -186px !important;
+            }
+            .wrap {
+                display: flex;
+                justify-content: end;
+                position: relative;
+                bottom: 63px;
+            }
+            .hint-section {
+                /*height: 30vh;*/s
+            }
+            .main-section-para {
+                font-family: 'Segoe UI REGULAR';
+                font-size: 12px;
+                font-weight: normal;
+                margin-top: 2px !important;
+            }
+            .zoom-box{
+                width:100% !important;
+            }
+            .zoom-box img {
+                vertical-align: bottom;
+                margin-bottom: 20px;
+                height: auto !important;
+                object-fit: contain;
+            }
+            .loop-section {
+                background: #ffffffa1;
+                height: 100%;
+                margin-left: 0px !important;
+                margin-right: 0px !important;
+                margin: 0 auto !important;
+            }
+            #body_screen4{
+                height: 120vh !important;
+            }
+        }
+        #exampleModalPreview2{
+            display:block !important;
+        }
+        /* iphone 3 */
+        @media only screen and (min-device-width: 320px) and (max-device-height: 480px) and (-webkit-device-pixel-ratio: 1) {}
+
+        /* iphone 4 */
+        @media only screen and (min-device-width: 320px) and (max-device-height: 480px) and (-webkit-device-pixel-ratio: 2) {}
+
+        /* iphone 5 */
+        @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (-webkit-device-pixel-ratio: 2) {}
+
+        /* iphone 6, 6s, 7, 8 */
+        @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (-webkit-device-pixel-ratio: 2) {}
+
+        /* iphone 6+, 6s+, 7+, 8+ */
+        @media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (-webkit-device-pixel-ratio: 3) {}
+
+        /* iphone X , XS, 11 Pro, 12 Mini */
+        @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+            #add1{
+                left: 8.30rem !important;
+            }
+            #add2{
+                left: 14.0rem !important;
+            }
+            #add3{
+                left: 19.37rem !important;
+            }
+            #sub1{
+                left: 8.30rem !important;
+            }
+            #sub2{
+                left: 13.7rem !important;
+            }
+            #sub3{
+                left: 19.2rem !important;
+            }
+        }
+
+        /* iphone 12, 12 Pro */
+        @media only screen and (min-device-width: 390px) and (max-device-height: 844px) and (-webkit-device-pixel-ratio: 3) {}
+
+        /* iphone XR, 11 */
+        @media only screen and (min-device-width : 414px) and (max-device-height : 896px) and (-webkit-device-pixel-ratio : 2) {}
+
+        /* iphone XS Max, 11 Pro Max */
+        @media only screen and (min-device-width : 414px) and (max-device-height : 896px) and (-webkit-device-pixel-ratio : 3) {}
+
+        /* iphone 12 Pro Max */
+        @media only screen and (min-device-width : 428px) and (max-device-height : 926px) and (-webkit-device-pixel-ratio : 3) { }
+    </style>
 @endpush
 @section('content')
     <div id="body_screen4" style="background:url('{{asset($adventure->edition->image)}}')">
