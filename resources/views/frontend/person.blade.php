@@ -16,7 +16,7 @@
         .customRowArea{
             padding: 50px;
             text-align: center;
-            display: flex;
+            display: block;
             justify-content: center;
             flex-direction: column;
         }
@@ -47,9 +47,9 @@
             border: 2px solid #E74218;
             padding: 12px 20px;
             width:fit-content;
-            
             margin: 15px auto;
             padding-bottom: 0px;
+            min-width: fit-content%;
         }
         .btnCustomChoose{
             color: #fff;
@@ -76,11 +76,12 @@
         .customRowAlign{
             align-items: center;
             margin-bottom: 15px;
-            margin-right: 10px;
+            margin-right: 0px;
         }
         .customImageQuestionMark{
             position: absolute;
             width: 100px;
+            display: block;
             transform: rotate(-33deg);
             top: 90px;
         }
@@ -94,9 +95,9 @@
         }
         @media (max-width: 767px) {
             .customRowArea {
-                padding: 50px;
+                padding: 0px;
                 text-align: center;
-                display: flex;
+                display: block;
                 justify-content: center;
                 flex-direction: column;
                 max-width: 100%;
@@ -204,6 +205,22 @@
     transform: translate(-50%, -50%) translateY(-5rem) scale(0.5) rotateX(-75deg);
   }
 }
+@media (max-width: 767px) {
+    .styleContainer{
+        margin-top: 58px;
+    }
+}
+.redBox{
+    width: fit-content;
+    word-wrap: break-word;
+    margin: auto;
+    border: 1px solid #E74218;
+    background: #e742186e;
+    padding: 14px;
+}
+.customRowAlign{
+    text-align: center;
+}
     </style>
 @endpush
 @section('content')
@@ -216,9 +233,9 @@
         </section>
         <div class="customRowArea">
              <div >
-                        
-                   @if($remaining_time > 0)        
-                                
+
+                   @if($remaining_time > 0)
+
                        <article id="js-countdown" class="countdown" style="width: 200px;">
                            <section id="js-days" class="number"></section>
                           <section id="js-separator" class="separator">:</section>
@@ -234,23 +251,23 @@
 
 
 
-                           
-                       
+
+
                     </div>
             <img class="customImageQuestionMark" src="{{asset('images/1stpage-questionmark.png')}}" />
             <img class="customImage" src="{{asset('images/logo_clue-masters.png')}}" />
             @if(count($user->groups))
-                <div style="width: 400px;  word-wrap: break-word; margin: auto; border: 1px solid #E74218;background: #e742186e;padding: 14px;">
-               
-                   
+                <div class="redBox">
+
+
                         <h4 style="color:#fff;">{{__('common.text27')}}:</h4>
                         <h6 style="color:#fff;">{{$user->groups[0]->name}}</h6>
                         @foreach($user->groups[0]->users as $u)
-                           <p style="color:#E74218;">{{$u->name}}</p> 
+                           <p style="color:#E74218;">{{$u->name}}</p>
                         @endforeach
-                        
+
             </div>
-                
+
             @endif
             @if(session()->has('error_message'))
                 <div class="alert alert-danger">
@@ -266,16 +283,16 @@
             <div class="customBorderBox">
                 @if(isset($adventure) && $adventure->attendees == 1)
                     <div class="row customRowAlign">
-                      
-                        
 
-                        <div class="col-md-4">
+
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
                             <span class="teams">{{__('common.text10')}} 1</span>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
                             <span class="members">1 {{__('common.text9')}}</span>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
                             <button class="btnCustomChoose" onclick="chooseOption()">{{__('common.text8')}}</button>
                         </div>
                     </div>
@@ -284,17 +301,17 @@
                         $count = 0;
                     @endphp
                     @foreach($adventure->groups as $group)
-                      
+
                         <div class="row customRowAlign">
-                            
-                            <div class="col-md-6">
+
+                            <div class="col-md-4">
                                 <span class="teams"> {{$group->name}}</span>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <span class="members">{{count($group->users)}}/{{$adventure->users_per_group}} {{__('common.text9')}}</span>
                             </div>
 
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 @if(count($group->users) < $adventure->users_per_group && !count($user->groups))
                                 <button class="btnCustomChoose" onclick="chooseOption('{{$group->id}}')">{{__('common.text8')}}</button>
                                 @else
@@ -317,11 +334,11 @@
                window.location.href='{{url("/joinevent")}}/{{$adventure->event_id}}/'+gid;
             },1000);
         }
-        
+
     </script>
     <script type="text/javascript">
     $(function() {
-  
+
   var targetDate  = new Date(Date.parse("{{$adventure->start_time}}"));
   var now   = new Date();
 
@@ -347,9 +364,9 @@ function daysBetween( date1, date2 ) {
 
   // Calculate the difference in milliseconds
   var difference_ms = date2_ms - date1_ms;
-    
+
   // Convert back to days and return
-  return Math.round(difference_ms/one_day); 
+  return Math.round(difference_ms/one_day);
 }
 
 function secondsDifference( date1, date2 ) {
@@ -360,7 +377,7 @@ function secondsDifference( date1, date2 ) {
   var date1_ms = date1.getTime();
   var date2_ms = date2.getTime();
   var difference_ms = date2_ms - date1_ms;
-  var difference = difference_ms / one_day; 
+  var difference = difference_ms / one_day;
   var offset = difference - Math.floor(difference);
   return offset * (60*60*24);
 }
@@ -370,7 +387,7 @@ function secondsDifference( date1, date2 ) {
 function startCountdown() {
   $('#input-container').hide();
   $('#countdown-container').show();
-  
+
   displayValue('#js-days', window.days);
   displayValue('#js-hours', window.hours);
   displayValue('#js-minutes', window.minutes);

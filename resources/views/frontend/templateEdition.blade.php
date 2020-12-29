@@ -428,9 +428,9 @@
 									@endif
 													</h4>
                                                     <div class="row">
-                                                        <div class="col">
+                                                        <div class="col responsive-hint-btns">
                                                             <button type="button" class="btn btn-secondary text-left prev-button"  data-toggle="modal" data-target="#exampleModalPreview2" style="display:block !important;" id="exampleModalPreview2" onclick="nextHint()" data-dismiss="modal">{{__('common.text21')}}</button>
-                                                            <button type="button" class="btn btn-secondary text-left next-button exampleModalPreview212" data-dismiss="modal" onclick="closeModal('{{$challenge->id}}','{{str_replace(' ','',$challenge->hint2)}}')" id="close-example-{{$challenge->id}}-{{str_replace(' ','',$challenge->hint2)}}">
+                                                            <button type="button" class="btn btn-secondary text-left next-button exampleModalPreview212 my-custom-btns" data-dismiss="modal" onclick="closeModal('{{$challenge->id}}','{{str_replace(' ','',$challenge->hint2)}}')" id="close-example-{{$challenge->id}}-{{str_replace(' ','',$challenge->hint2)}}">
 															{{__('common.text22')}}</button>
                                                         </div>
                                                     </div>
@@ -523,9 +523,9 @@
 
 													</p>
                                                     <div class="row">
-                                                        <div class="col">
+                                                        <div class="col responsive-hint-btns">
                                                             <button type="button" class="btn btn-secondary text-left prev-button"  data-toggle="modal" data-target="#exampleModalPreview2" style="display:block !important;" id="exampleModalPreview2" onclick="nextHint()" data-dismiss="modal">{{__('common.text21')}}</button>
-                                                            <button type="button" class="btn btn-secondary text-left prev-button"  data-toggle="modal" data-target="#exampleModalPreview2"data-dismiss="modal" onclick="closeModal('{{$challenge->id}}','{{str_replace(' ','',$challenge->hint2)}}')" id="close-example-{{$challenge->id}}-{{str_replace(' ','',$challenge->hint2)}}">{{__('common.text22')}}</button>
+                                                            <button type="button" class="btn btn-secondary text-left prev-button responsive-hint-btns"  data-toggle="modal" data-target="#exampleModalPreview2"data-dismiss="modal" onclick="closeModal('{{$challenge->id}}','{{str_replace(' ','',$challenge->hint2)}}')" id="close-example-{{$challenge->id}}-{{str_replace(' ','',$challenge->hint2)}}">{{__('common.text22')}}</button>
 
 
                                                         </div>
@@ -719,9 +719,9 @@
 											@endif
 															</h4>
 		                                                    <div class="row">
-		                                                        <div class="col">
+		                                                        <div class="col responsive-hint-btns">
 		                                                            <button type="button" class="btn btn-secondary text-left prev-button"  data-toggle="modal" data-target="#exampleModalPreview2" style="display:block !important;" id="exampleModalPreview2" onclick="nextHint()" data-dismiss="modal">{{__('common.text21')}}</button>
-		                                                            <button type="button" class="btn btn-secondary text-left next-button exampleModalPreview212" data-dismiss="modal" onclick="closeModal('{{$challenge->id}}','{{str_replace(' ','',$challenge->hint2)}}')" id="close-example-{{$challenge->id}}-{{str_replace(' ','',$challenge->hint2)}}">
+		                                                            <button type="button" class="btn btn-secondary text-left next-button exampleModalPreview212 responsive-hint-btns" data-dismiss="modal" onclick="closeModal('{{$challenge->id}}','{{str_replace(' ','',$challenge->hint2)}}')" id="close-example-{{$challenge->id}}-{{str_replace(' ','',$challenge->hint2)}}">
 																	{{__('common.text22')}}</button>
 		                                                        </div>
 		                                                    </div>
@@ -814,9 +814,9 @@
 
 															</p>
 		                                                    <div class="row">
-		                                                        <div class="col">
+		                                                        <div class="col responsive-hint-btns">
 		                                                            <button type="button" class="btn btn-secondary text-left prev-button"  data-toggle="modal" data-target="#exampleModalPreview2" style="display:block !important;" id="exampleModalPreview2" onclick="nextHint()" data-dismiss="modal">{{__('common.text21')}}</button>
-		                                                            <button type="button" class="btn btn-secondary text-left prev-button"  data-toggle="modal" data-target="#exampleModalPreview2"data-dismiss="modal" onclick="closeModal('{{$challenge->id}}','{{str_replace(' ','',$challenge->hint2)}}')" id="close-example-{{$challenge->id}}-{{str_replace(' ','',$challenge->hint2)}}">{{__('common.text22')}}</button>
+		                                                            <button type="button" class="btn btn-secondary text-left prev-button responsive-hint-btns"  data-toggle="modal" data-target="#exampleModalPreview2"data-dismiss="modal" onclick="closeModal('{{$challenge->id}}','{{str_replace(' ','',$challenge->hint2)}}')" id="close-example-{{$challenge->id}}-{{str_replace(' ','',$challenge->hint2)}}">{{__('common.text22')}}</button>
 
 
 		                                                        </div>
@@ -1009,9 +1009,9 @@
 												@endif
 																</h4>
 			                                                    <div class="row">
-			                                                        <div class="col">
+			                                                        <div class="col responsive-hint-btns">
 			                                                            <button type="button" class="btn btn-secondary text-left prev-button"  data-toggle="modal" data-target="#exampleModalPreview2" style="display:block !important;" id="exampleModalPreview2" onclick="nextHint()" data-dismiss="modal">{{__('common.text21')}}</button>
-			                                                            <button type="button" class="btn btn-secondary text-left next-button exampleModalPreview212" data-dismiss="modal" onclick="closeModal('{{$challenge->id}}','{{str_replace(' ','',$challenge->hint2)}}')" id="close-example-{{$challenge->id}}-{{str_replace(' ','',$challenge->hint2)}}">
+			                                                            <button type="button" class="btn btn-secondary text-left next-button exampleModalPreview212 responsive-hint-btns" data-dismiss="modal" onclick="closeModal('{{$challenge->id}}','{{str_replace(' ','',$challenge->hint2)}}')" id="close-example-{{$challenge->id}}-{{str_replace(' ','',$challenge->hint2)}}">
 																		{{__('common.text22')}}</button>
 			                                                        </div>
 			                                                    </div>
@@ -1104,9 +1104,9 @@
 
 																</p>
 			                                                    <div class="row">
-			                                                        <div class="col">
+			                                                        <div class="col responsive-hint-btns">
 			                                                            <button type="button" class="btn btn-secondary text-left prev-button"  data-toggle="modal" data-target="#exampleModalPreview2" style="display:block !important;" id="exampleModalPreview2" onclick="nextHint()" data-dismiss="modal">{{__('common.text21')}}</button>
-			                                                            <button type="button" class="btn btn-secondary text-left prev-button"  data-toggle="modal" data-target="#exampleModalPreview2"data-dismiss="modal" onclick="closeModal('{{$challenge->id}}','{{str_replace(' ','',$challenge->hint2)}}')" id="close-example-{{$challenge->id}}-{{str_replace(' ','',$challenge->hint2)}}">{{__('common.text22')}}</button>
+			                                                            <button type="button" class="btn btn-secondary text-left prev-button my-custom-btns"  data-toggle="modal" data-target="#exampleModalPreview2"data-dismiss="modal" onclick="closeModal('{{$challenge->id}}','{{str_replace(' ','',$challenge->hint2)}}')" id="close-example-{{$challenge->id}}-{{str_replace(' ','',$challenge->hint2)}}">{{__('common.text22')}}</button>
 
 
 			                                                        </div>

@@ -4,139 +4,220 @@
 @endphp
 
 @push('css')
-    <style>
-		p{
-			color: #1c4251;
-			margin-top: 20px;
-			margin-bottom: 0px !important;
-			background: #ffffff00;
-			width: 100%;	
-			text-align: center;
-			padding-left: 2%;
-			padding-right: 2%;
-			
-		}
-        .styleContainerBgImage{
+<style>
+    .row.customClassRow1{
+        width: 100%;
+        text-align: left;
+        display: inline-block;
+        position: fixed;
+        left: 16px;
+        padding-bottom: 2px;
+        padding-left: 14px;
+        padding-top: 9px;
+        top: 4px;
+    }
+
+    .row.customClassRow {
+        display: none;
+    }
+    @media screen and (max-width: 992px) {
+        .styleContainerBgImage {
+            height: auto !important;
+            justify-content: end !important;
+        }
+        p.MsoNormal span {
+            font-size: 12px !important;
+            font-weight: 500;
+            text-align: left !important;
+        }
+        h3.customClassh3 {
+            margin: 4px 0px;
+            font-size: 13px;
+            padding: 17px 0px;
+        }
+
+        .customClassBtnRow {
+            padding: 0px 0px 23px 0px;
+            margin: 0px;
+        }
+
+        .customPara1 {
+            padding: 0px;
+            margin: -1px 0px 34px 0px;
+            margin-bottom:0px !important;
+        }
+        .styleContainerBgImage {
+            height: auto;
+        }
+
+        p.MsoNormal {
+            margin-top: 6px;
+            text-align: left;
+            font-size: 13px;
+        }
+
+        .customClassBtnRow {
+            padding-top: 0px;
+        }
+
+        .row.customClassRow1 {
             width: 100%;
-            height: 100vh;
-            opacity: 1;
-            max-width: 100%;
-			background-image: url('{{asset($temp)}}') !important;
-            background-repeat: no-repeat;
-            background-size: cover;
-            z-index: 999999;
-            position: absolute;
-            display: flex;
-            top:0;
-            left:0;
-            align-items: center;
-            flex-direction: column;
-            justify-content: center;
+            text-align: left;
+            display: inline-block;
+            position: relative !important;
+            left: 0px;
+            padding-bottom: 2px;
+            padding-left: 14px;
+            padding-top: 9px;
+            top:0px !important;
         }
-        #overlay {
-            position: fixed; /* Sit on top of the page content */
-            display: none; /* Hidden by default */
-            width: 100%; /* Full width (cover the whole page) */
-            height: 100%; /* Full height (cover the whole page) */
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0,0,0,2); /* Black background with opacity */
-            z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-            cursor: pointer; /* Add a pointer on hover */
-        }
-        .customClassh3{
-            font-size: 42px;
-            color: #fff;
-            font-weight: 600;
-            margin-top: 30px;
-            text-align: center;
-        }
-        .customClassh4{
-            text-align: center;
-            font-size: 25px;
-            color: #fff;
+    }
+    .customPara1 p, .customPara1 span {
+        text-align: left;
+    }
+    p {
+        font-size: 12px;
             font-weight: 500;
         }
-        .customClassh41{
-            text-align: center;
-            color: #fff;
-            margin-top: 42px;
-            font-size: 18px;
-            font-weight: 600;
-        }
+    }
+    .customClassRow1 {
+        z-index: 9999;
+        position: absolute;
+        left: 32px;
+        top: 20px;
+    }
+    p{
+        color: #1c4251;
+        margin-top: 20px;
+        margin-bottom: 0px !important;
+        background: #ffffff00;
+        width: 100%;
+        text-align: center;
+        padding-left: 2%;
+        padding-right: 2%;
+
+    }
+    .styleContainerBgImage{
+        width: 100%;
+        min-height: 100vh;
+        opacity: 1;
+        max-width: 100%;
+        background-image: url('{{asset($temp)}}') !important;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 999999;
+        position: absolute;
+        display: flex;
+        top:0;
+        left:0;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #overlay {
+        position: fixed; /* Sit on top of the page content */
+        display: none; /* Hidden by default */
+        width: 100%; /* Full width (cover the whole page) */
+        height: 100%; /* Full height (cover the whole page) */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,2); /* Black background with opacity */
+        z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+        cursor: pointer; /* Add a pointer on hover */
+    }
+    .customClassh3{
+        font-size: 42px;
+        color: #fff;
+        font-weight: 600;
+        margin-top: 30px;
+        text-align: center;
+    }
+    .customClassh4{
+        text-align: center;
+        font-size: 25px;
+        color: #fff;
+        font-weight: 500;
+    }
+    .customClassh41{
+        text-align: center;
+        color: #fff;
+        margin-top: 42px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .customImage {
+        color: #E74218;
+        background: #fff;
+        padding: 19px 20px;
+        font-size: 35px;
+        border-radius: 100px;
+        border: 3px solid #E74218;
+        cursor: pointer;
+        margin-top: 11px;
+        margin-bottom: 23px;
+    }
+    .customPara1{
+        background: #ffffffcc;
+        width: 60%;
+        border-radius: 3px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .customStyleB{
+        font-weight: bold;
+    }
+    @media (max-width: 676px) {
         .customImage {
             color: #E74218;
             background: #fff;
-            padding: 19px 20px;
+            padding: 17px 20px;
             font-size: 35px;
             border-radius: 100px;
             border: 3px solid #E74218;
             cursor: pointer;
-            margin-top: 11px;
-            margin-bottom: 23px;
+            margin-top: 0px;
         }
-        .customPara1{
+        .customPara1 {
             background: #ffffffcc;
-            width: 60%;
+            padding: 20px;
+            width: 80%;
             border-radius: 3px;
-            margin-top: 40px;
-			margin-bottom: 40px;
+            margin-top: 0px;
         }
-        .customStyleB{
-			font-weight: bold;
-        }
-        @media (max-width: 676px) {
-            .customImage {
-                color: #E74218;
-                background: #fff;
-                padding: 17px 20px;
-                font-size: 35px;
-                border-radius: 100px;
-                border: 3px solid #E74218;
-                cursor: pointer;
-                margin-top: 0px;
-            }
-            .customPara1 {
-                background: #ffffffcc;
-                padding: 20px;
-                width: 80%;
-                border-radius: 3px;
-                margin-top: 0px;
-            }
-        }
-        .customBtnStart{
-            color: #fff;
-            padding: 12px 50px;
-            border-radius: 3px;
-            border: 0px;
-            background: #E74218;
-            font-weight: 500;
-        }
-        .customClassBtnRow{
-            width: 90%;
-			padding-top: 23px;
-            text-align: center;
-        }
-        .customBtnStart:focus{
-            outline: none !important;
-        }
-		p.customPara1 {
-    		display: none;
-		}
-		#myVideo {
-		  position: fixed;
-		  right: 0;
-		  bottom: 0;
-		  min-width: 100%; 
-		  min-height: 100%;
-			z-index:-1;
-		}
-		#myBtn:focus{
-			outline:none !important;
-		}
-    </style>
+    }
+    .customBtnStart{
+        color: #fff;
+        padding: 12px 50px;
+        border-radius: 3px;
+        border: 0px;
+        background: #E74218;
+        font-weight: 500;
+    }
+    .customClassBtnRow{
+        width: 90%;
+        padding-top: 23px;
+        text-align: center;
+    }
+    .customBtnStart:focus{
+        outline: none !important;
+    }
+    p.customPara1 {
+        display: none;
+    }
+    #myVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index:-1;
+    }
+    #myBtn:focus{
+        outline:none !important;
+    }
+</style>
 @endpush
 @section('content')
     <div class="styleContainerBgImage">
