@@ -284,16 +284,13 @@
             <div class="customBorderBox">
                 @if(isset($adventure) && $adventure->attendees == 1)
                     <div class="row customRowAlign">
-
-
-
-                        <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="col-md-6 col-sm-4 col-xs-12">
                             <span class="teams">{{__('common.text10')}} 1</span>
                         </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="col-md-3 col-sm-4 col-xs-12">
                             <span class="members">1 {{__('common.text9')}}</span>
                         </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="col-md-3 col-sm-4 col-xs-12">
                             <button class="btnCustomChoose" onclick="chooseOption()">{{__('common.text8')}}</button>
                         </div>
                     </div>
@@ -305,14 +302,14 @@
 
                         <div class="row customRowAlign">
 
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <span class="teams"> {{$group->name}}</span>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <span class="members">{{count($group->users)}}/{{$adventure->users_per_group}} {{__('common.text9')}}</span>
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 @if(count($group->users) < $adventure->users_per_group && !count($user->groups))
                                 <button class="btnCustomChoose" onclick="chooseOption('{{$group->id}}')">{{__('common.text8')}}</button>
                                 @else

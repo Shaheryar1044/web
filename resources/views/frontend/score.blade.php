@@ -82,7 +82,7 @@
         }
         .customImageQuestionMark{
             position: absolute;
-	    display: block;
+	        display: block;
             width: 100px;
             transform: rotate(-33deg);
             top: 90px;
@@ -204,7 +204,7 @@
                     @endphp
 
                         <h4 style="color:#fff;">{{__('common.text27')}}:</h4>
-                        <h6 style="color:#fff;">{{$group->name}}</h6>
+                        <h6 style="color:#fff;">{{$myGroup->name}}</h6>
                         @foreach($myGroup->users as $user)
                            <p style="color:#E74218;">{{$user->name}}</p>
                         @endforeach
