@@ -95,6 +95,11 @@
             right: 117px;
             bottom: 65%;
         }
+	@media (min-width: 364px) and (max-width: 539px) {
+	    .customImage {
+		padding-top: 59px !important;
+	}
+	}
         @media (max-width: 767px) {
              h1.congrats-text {
     		font-size: inherit;
@@ -214,3 +219,5 @@
         </div>
     </div>
 @endsection
+
+
