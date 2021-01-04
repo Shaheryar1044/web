@@ -26,7 +26,7 @@
 			font-size: 12px !important;
 			font-weight: 500;
 			padding-top: 5px;
-			text-align: left;
+			text-align: center;
 		}
 		.loop-section{
 			height: fit-content !important;
@@ -591,4 +591,3 @@
 </script>
 
 @endpush
-
