@@ -12,6 +12,7 @@
 .customClassRow {
 		left: 0px !important;
 		padding-left: 24px;
+        padding-top: 11px;
 	}
 	#body_screen4{
 		height: auto !important;
@@ -228,19 +229,13 @@
                                 </p>
 
                             @endif
-                        <p class="customFinal" style="font-size:25px !important;">Final Time    {{gmdate("H:i:s", $save_data->timer)}}</p>
+                        <p class="customFinal" style="font-size:14px !important;">Final Time    {{gmdate("H:i:s", $save_data->timer)}}</p>
 
                         @if($group)
 
 
 
-                        <p class="customFinal" style="margin:auto; font-size:25px !important;"><a href="{{url('final-score/'.$code.'/'.$group)}}" style="color:#fff"><img src="{{asset('public/images/score.png')}}" height="130" width="150">  </a> </p>
 
-                        <br><br>
-
-
-
-                        @endif
 
                     </div>
 
@@ -249,6 +244,13 @@
             </div>
 
         </section>
+        <p class="customFinal" style="margin:auto; font-size:25px !important;text-align: center;"><a href="{{url('final-score/'.$code.'/'.$group)}}" style="color:#fff"><img src="{{asset('public/images/score.png')}}" height="130" width="150">  </a> </p>
+
+                        <br><br>
+
+
+
+                        @endif
 
         {{-- start-main-section --}}
 

@@ -5,6 +5,7 @@
         display: flex;
         justify-content: end;
         position: relative;
+        top: 71px;
     }
 
     .stepper {

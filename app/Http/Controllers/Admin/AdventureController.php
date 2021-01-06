@@ -20,7 +20,7 @@ class AdventureController extends Controller
 		$request->session()->flash('message', 'Adventure Deleted Successfully.');
         return back();
     }
-    
+
 	public function duplicateAdventure($id , Request $request) {
         $adventure = Adventure::where('id','=',$id)->first();
         $a = $b = '';
@@ -58,7 +58,7 @@ class AdventureController extends Controller
         $request->session()->flash('message', 'Adventure is Duplicated.');
         return redirect()->back();
     }
-	
+
     public function index(){
     	$adventures = Adventure::with('template', 'edition')->Has('template')->Has('edition')->get();
     	return view('admin.adventure.index', compact('adventures'));
@@ -66,7 +66,7 @@ class AdventureController extends Controller
     public function create(){
 		$a = $b = '';
 		for($i = 0; $i < 3; $i++){
-			$a .= chr(mt_rand(65, 90)); 
+			$a .= chr(mt_rand(65, 90));
 			$b .= mt_rand(0, 9);
 		}
 		$event_id = $a . $b;
@@ -98,18 +98,18 @@ class AdventureController extends Controller
 			foreach ($request->eventChallenges as $challenge) {
 			 AdventureChallenges::create([
 					'challenge_id' =>$challenge,
-					'adventure_id' =>$adevnture->id, 
+					'adventure_id' =>$adevnture->id,
 				]);
 			}
 			if($request->attendees == 0){
-				
+
 				foreach ($request->groupNames as $name) {
 				 AdventureGroup::create([
 						'name' => $name,
 						'adventure_id' =>$adevnture->id,
 					]);
 				}
-				/*for ($i=1; $i <=$request->groups_no ; $i++) { 
+				/*for ($i=1; $i <=$request->groups_no ; $i++) {
 					AdventureGroup::create([
 						'name' => $i,
 						'adventure_id' =>$adevnture->id,
@@ -126,8 +126,8 @@ class AdventureController extends Controller
 			}
 
     }
-	
-	
+
+
     public function editAdventure($id) {
     	$adventures = Adventure::where('id','=',$id)->first();
 		$cha = AdventureChallenges::where('adventure_id','=',$id)->get()->toArray();
@@ -137,7 +137,7 @@ class AdventureController extends Controller
         }
     	$a = $b = '';
 		for($i = 0; $i < 3; $i++){
-			$a .= chr(mt_rand(65, 90)); 
+			$a .= chr(mt_rand(65, 90));
 			$b .= mt_rand(0, 9);
 		}
 		$event_id = $a . $b;
@@ -153,7 +153,7 @@ class AdventureController extends Controller
     	}
     	return view('admin.adventure.edit', compact('adventures','templates', 'templateEditions', 'challenges' , 'finalTemp','arr','match'));
     }
-    
+
     public function updateAdventure($id,Request $request){
     //	dd($request->all());
     	Adventure::where('id','=',$id)->update([
@@ -177,7 +177,7 @@ class AdventureController extends Controller
 		foreach ($request->eventChallenges as $challenge) {
 		    AdventureChallenges::create([
 				'challenge_id' =>$challenge,
-				'adventure_id' =>$id, 
+				'adventure_id' =>$id,
 			]);
 		}
 		AdventureGroup::where('adventure_id','=',$id)->delete();

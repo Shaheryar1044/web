@@ -73,7 +73,9 @@
         }
     }
     .customPara1 p, .customPara1 span {
-        text-align: left;
+        text-align: center;
+        font-family: 'Segoe UI Regular';
+        font-size: 17px;
     }
     p {
         font-size: 12px;
