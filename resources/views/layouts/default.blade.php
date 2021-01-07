@@ -78,5 +78,15 @@
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 @stack('js')
+<script type="text/javascript">
+  $(document).ready(function() {
+      window.history.pushState(null, "", window.location.href);        
+      window.onpopstate = function() {
+        alert('You can not go back until complete');
+          window.history.pushState(null, "", window.location.href);
+      };
+  });
+
+</script>
 </body>
 </html>

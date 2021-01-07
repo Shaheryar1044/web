@@ -1604,6 +1604,7 @@ $("#add3").on("click", function () {
 		var timer_counter = HH + ":" + MM + ":" + SS;
         $(el).text(HH + ":" + MM + ":" + SS);
         if (timer === 0) {
+            alert('Your time is over! Now Exrtra time will count');
             $(el).hide();
             $("#plus-time").show();
             
@@ -1703,13 +1704,14 @@ var performance = window.performance, round = Math.round;
         };  
     }  
 </script>  
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   $(document).ready(function() {
       window.history.pushState(null, "", window.location.href);        
       window.onpopstate = function() {
+        alert('You can not go back until complete all the challenges');
           window.history.pushState(null, "", window.location.href);
       };
   });
 
-</script>
+</script> -->
 @endpush
