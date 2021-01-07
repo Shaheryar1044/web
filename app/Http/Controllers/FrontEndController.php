@@ -193,7 +193,7 @@ class FrontEndController extends Controller
     public function score($code, $group){
 
         $adventure = Adventure::where('event_id','=',$code)->with(['groups'=>function($q){
-            $q->orderBy('timer');
+            $q->orderBy(DB::raw('timer IS NULL, timer'));
             $q->with('users');
         }])->first();
        // dd($adventure);

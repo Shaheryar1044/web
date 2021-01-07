@@ -240,7 +240,7 @@ Create Adventure
                                             <label>Number of groups</label>
                                         </div>
                                         <div class="col-sm-8">
-                                            <input type="number"name="groups_no" placeholder="Enter Number (min 2)"  min='2' id="groups_no" value="{{old('groups_no')}}" onkeyup="renderGropnameRows()"  class="form-control">
+                                            <input type="number"name="groups_no" placeholder="Enter Number (min )"  min='1' id="groups_no" value="{{old('groups_no')}}" onkeyup="renderGropnameRows()"  class="form-control">
 
                                             @if($errors->has('groups_no'))
                                                 <p style="color:red;">{{ $errors->first('groups_no') }}</p>
@@ -257,7 +257,7 @@ Create Adventure
                                             <label>Maximum Number of users per group</label>
                                         </div>
                                         <div class="col-sm-8">
-                                            <input type="number"name="users_per_group" placeholder="Enter Number (min 2)"  min='2' id="users_per_group" value="{{old('users_per_group')}}"  class="form-control">
+                                            <input type="number"name="users_per_group" placeholder="Enter Number (min 1)"  min='1' id="users_per_group" value="{{old('users_per_group')}}"  class="form-control">
 
                                             @if($errors->has('users_per_group'))
                                                 <p style="color:red;">{{ $errors->first('users_per_group') }}</p>

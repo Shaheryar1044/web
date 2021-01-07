@@ -21,7 +21,7 @@ return [
 	'text17' => 'Validate',
 	'text18' => 'All puzzles solved',
 	'text19' => 'CONGRATULATIONS',
-	'text20' => 'Riddle Solved',
+	'text20' => 'Riddle',
 	'text21' => 'Next note',
 	'text22' => 'Try without further notice',
 	'text23' => 'To the solution',

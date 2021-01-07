@@ -21,7 +21,7 @@ return [
 	'text17' => 'Code bestätigen',
 	'text18' => 'Alle Rätsel gelöst',
 	'text19' => 'HERZLICHEN GLÜCKWUNSCH',
-	'text20' => 'Rätsel gelöst',
+	'text20' => 'Rätsel',
 	'text21' => 'Nächster Hinweis',
 	'text22' => 'Ohne weiteren Hinweis versuchen',
 	'text23' => 'Zur Lösung',

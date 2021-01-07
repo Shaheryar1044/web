@@ -35,7 +35,7 @@
 
 #body_screen4{
     height: auto;
-    background-position: center center !important;
+    /*background-position: center center !important;*/
     background-size: cover !important;
     background-repeat: no-repeat !important;
 }

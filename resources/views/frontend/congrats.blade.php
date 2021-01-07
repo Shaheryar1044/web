@@ -591,5 +591,20 @@
     }
 
 </script>
+<script type = "text/javascript">  
+    window.onload = function () {  
+        document.onkeydown = function (e) {  
+            return (e.which || e.keyCode) != 116;  
+        };  
+    }  
+</script>  
+<script type="text/javascript">
+  $(document).ready(function() {
+      window.history.pushState(null, "", window.location.href);        
+      window.onpopstate = function() {
+          window.history.pushState(null, "", window.location.href);
+      };
+  });
 
+</script>
 @endpush

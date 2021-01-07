@@ -12,6 +12,9 @@
             background-repeat:no-repeat;
             background-size:cover;
         }
+        .dropdown-toggle::after{
+            display: none !important;
+        }
         #body_screen4{
             height: -webkit-fill-available !important;
         }
@@ -263,7 +266,8 @@
                     <div class="col-6">
                         <div class="float-right">
                            @if($adventure->count_down)
-                                <div data-interval="30" class="head-top-right timer" data-timer-name="Timer1">00:00</div>
+                                <div  class="head-top-right" id="plus-time" style="display:none">00:<span id="count-mins">00</span>:<span id="count-seconds">00</span></div>
+                                <div data-interval="30" class="head-top-right timer" data-timer-name="Timer1" >00:00</div>
                             @endif
                         </div>
                     </div>
@@ -1600,9 +1604,9 @@ $("#add3").on("click", function () {
 		var timer_counter = HH + ":" + MM + ":" + SS;
         $(el).text(HH + ":" + MM + ":" + SS);
         if (timer === 0) {
-            $(el).text("Updating");
-            clearInterval($(el).data(queueName));
-            next();
+            $(el).hide();
+            $("#plus-time").show();
+            
         }
     }, 1000));
 }
@@ -1661,9 +1665,18 @@ var secondsSpentElement = document.getElementById("seconds-spent");
 
 requestAnimationFrame(function updateTimeSpent(){
 var timeNow = performance.now();
-
-secondsSpentElement.value = round(timeNow/1000);
-
+var time = round(timeNow/1000)
+    secondsSpentElement.value = time;
+var mins = Math.floor(time/60);
+var seconds = time - mins *60; 
+if(mins.toString().length ==1){
+    mins = "0"+mins;
+}
+if(seconds.toString().length ==1){
+    seconds = "0"+seconds;
+}
+$("#count-seconds").text(seconds);
+$("#count-mins").text(mins);
 
 requestAnimationFrame(updateTimeSpent);
 });
@@ -1682,5 +1695,21 @@ var performance = window.performance, round = Math.round;
 			$(this).val(window.atob(value));
 		})
 	});
+</script>
+<script type = "text/javascript">  
+    window.onload = function () {  
+        document.onkeydown = function (e) {  
+            return (e.which || e.keyCode) != 116;  
+        };  
+    }  
+</script>  
+<script type="text/javascript">
+  $(document).ready(function() {
+      window.history.pushState(null, "", window.location.href);        
+      window.onpopstate = function() {
+          window.history.pushState(null, "", window.location.href);
+      };
+  });
+
 </script>
 @endpush
