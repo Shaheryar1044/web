@@ -32,4 +32,6 @@ return [
     'text27' => 'Mein Team',
     'text28' => 'Hinweise',
     'text29' => 'Einen Moment noch. Die anderen Teams spielen noch.',
+    'text30' => 'Sorry',
+    'text31' => 'Zurückgehen ist leider nicht möglich. Du hast das Event beendet.',
 ];

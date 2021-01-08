@@ -82,7 +82,7 @@
   $(document).ready(function() {
       window.history.pushState(null, "", window.location.href);        
       window.onpopstate = function() {
-        alert('You can not go back until complete');
+        swal("{{__('common.text30')}}...!", "{{__('common.text31')}}", "error");
           window.history.pushState(null, "", window.location.href);
       };
   });

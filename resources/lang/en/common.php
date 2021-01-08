@@ -31,4 +31,6 @@ return [
     'text27' => 'My Team',
     'text28' => 'Hints',
     'text29' => 'Please wait until other teams complete the Challenges',
+    'text30' => 'Sorry',
+    'text31' => 'You can not go back until complete!',
 ];
