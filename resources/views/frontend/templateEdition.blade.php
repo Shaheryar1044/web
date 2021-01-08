@@ -7,6 +7,26 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{asset('public/css/jquery.jqZoom.css')}}" type="text/css"/>
     <style>
+        @media (max-width: 500px){
+    .customClassRow {
+        left: 18px !important;
+        top: 5px !important;
+}
+}
+    @media (max-width: 500px) {
+    .customClassRow img {
+        width: 30px !important;
+        height: 30px !important;
+    }
+    }
+        .top-section .container-fluid .row {
+            width: 100% !important;
+            margin: 0px !important;
+            padding: 0px !important;
+        }
+        .top-section .container-fluid .row .col-6 {
+            padding: 0px;
+        }
         html{
             background:url('{{$adventure->edition->image}}');
             background-repeat:no-repeat;
@@ -17,6 +37,7 @@
         }
         #body_screen4{
             height: -webkit-fill-available !important;
+            min-height: 100vh !important;
         }
         .viewer-box{
             left:420px !important;
@@ -24,7 +45,9 @@
         .loop-section {
             background: rgb(255 255 255 / 79%) !important;
             min-height: fit-content !important;
+            min-height: -moz-fit-content !important;
             max-height: fit-content !important;
+            max-height: -moz-fit-content !important;
             padding-bottom: 14px;
         }
         .main-text-challenge {
@@ -1607,7 +1630,7 @@ $("#add3").on("click", function () {
             alert('Your time is over! Now Exrtra time will count');
             $(el).hide();
             $("#plus-time").show();
-            
+
         }
     }, 1000));
 }
@@ -1669,7 +1692,7 @@ var timeNow = performance.now();
 var time = round(timeNow/1000)
     secondsSpentElement.value = time;
 var mins = Math.floor(time/60);
-var seconds = time - mins *60; 
+var seconds = time - mins *60;
 if(mins.toString().length ==1){
     mins = "0"+mins;
 }
@@ -1697,16 +1720,16 @@ var performance = window.performance, round = Math.round;
 		})
 	});
 </script>
-<script type = "text/javascript">  
-    window.onload = function () {  
-        document.onkeydown = function (e) {  
-            return (e.which || e.keyCode) != 116;  
-        };  
-    }  
-</script>  
+<script type = "text/javascript">
+    window.onload = function () {
+        document.onkeydown = function (e) {
+            return (e.which || e.keyCode) != 116;
+        };
+    }
+</script>
 <!-- <script type="text/javascript">
   $(document).ready(function() {
-      window.history.pushState(null, "", window.location.href);        
+      window.history.pushState(null, "", window.location.href);
       window.onpopstate = function() {
         alert('You can not go back until complete all the challenges');
           window.history.pushState(null, "", window.location.href);

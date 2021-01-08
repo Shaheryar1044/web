@@ -1,6 +1,18 @@
 @extends('layouts.default')
 @push('css')
     <style>
+        @media (max-width: 500px){
+            .customClassRow {
+                left: 18px !important;
+                top: 5px !important;
+            }
+        }
+        @media (max-width: 500px){
+            .customClassRow img {
+                width: 30px !important;
+                height: 30px !important;
+            }
+        }
         body {
             font-family: Montserrat;
         }
