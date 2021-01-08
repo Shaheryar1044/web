@@ -9,6 +9,18 @@
 <link href="{{asset('public/assets/mdb.css')}}" rel="stylesheet">
 
 <style>
+    @media (max-width: 500px){
+    .customClassRow {
+        left: 18px !important;
+        top: 5px !important;
+}
+}
+    @media (max-width: 500px) {
+    .customClassRow img {
+        width: 30px !important;
+        height: 30px !important;
+    }
+    }
 .customClassRow {
 		left: 0px !important;
 		padding-left: 24px;
@@ -20,7 +32,9 @@
 	}
 	.loop-section {
 		min-height: fit-content !important;
+		min-height: -moz-fit-content !important;
 		max-height: fit-content !important;
+		max-height: -moz-fit-content !important;
 	}
 	@media screen and (max-width: 992px) {
 		p.customParagragh.custom-challenge-para {
@@ -31,7 +45,9 @@
 		}
 		.loop-section{
 			height: fit-content !important;
+			height: -moz-fit-content !important;
 			max-height: fit-content !important;
+			max-height: -moz-fit-content !important;
 		}
 		p.customParagragh {
 			font-size: 14px;
@@ -591,16 +607,16 @@
     }
 
 </script>
-<script type = "text/javascript">  
-    window.onload = function () {  
-        document.onkeydown = function (e) {  
-            return (e.which || e.keyCode) != 116;  
-        };  
-    }  
-</script>  
+<script type = "text/javascript">
+    window.onload = function () {
+        document.onkeydown = function (e) {
+            return (e.which || e.keyCode) != 116;
+        };
+    }
+</script>
 <script type="text/javascript">
   $(document).ready(function() {
-      window.history.pushState(null, "", window.location.href);        
+      window.history.pushState(null, "", window.location.href);
       window.onpopstate = function() {
           window.history.pushState(null, "", window.location.href);
       };

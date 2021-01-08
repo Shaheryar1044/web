@@ -1,6 +1,18 @@
 @extends('layouts.default')
 @push('css')
     <style>
+        @media (max-width: 500px){
+    .customClassRow {
+        left: 18px !important;
+        top: 5px !important;
+}
+}
+    @media (max-width: 500px) {
+    .customClassRow img {
+        width: 30px !important;
+        height: 30px !important;
+    }
+    }
         body {
             font-family: Montserrat;
         }
@@ -21,6 +33,7 @@
         justify-content: center;
         flex-direction: column;
         max-width: fit-content;
+        max-width: -moz-fit-content;
         }
         .customPara {
             display: block;
@@ -49,6 +62,7 @@
             padding: 12px 20px;
             min-width: 600px;
             width:fit-content;
+            width:-moz-fit-content;
             margin: 15px auto;
             padding-bottom: 0px;
         }
@@ -112,6 +126,7 @@
             justify-content: center;
             flex-direction: column;
             max-width: fit-content;
+            max-width: -moz-fit-content;
             }
             .customBorderBox {
                 /*border: 2px solid #E74218;*/
@@ -119,7 +134,8 @@
                 width: 100%;
                 margin: 0 auto;
                 padding-bottom: 0px;
-        min-width: fit-content;
+                min-width: fit-content;
+                min-width: -moz-fit-content;
             }
         }
         hr {
@@ -197,7 +213,7 @@
                     @endforeach
 
             </div>
-            <div style="width: fit-content; margin: auto; border: 1px solid #E74218;background: #e742186e;padding: 14px;min-width: 258px;">
+            <div style="width: fit-content;width: -moz-fit-content; margin: auto; border: 1px solid #E74218;background: #e742186e;padding: 14px;min-width: 258px;">
                 @php
                         $count = 0;
                         $winner = 0;
@@ -221,16 +237,16 @@
 @endsection
 @push('js')
 
-<script type = "text/javascript">  
-    window.onload = function () {  
-        document.onkeydown = function (e) {  
-            return (e.which || e.keyCode) != 116;  
-        };  
-    }  
-</script>  
+<script type = "text/javascript">
+    window.onload = function () {
+        document.onkeydown = function (e) {
+            return (e.which || e.keyCode) != 116;
+        };
+    }
+</script>
 <script type="text/javascript">
   $(document).ready(function() {
-      window.history.pushState(null, "", window.location.href);        
+      window.history.pushState(null, "", window.location.href);
       window.onpopstate = function() {
           window.history.pushState(null, "", window.location.href);
       };

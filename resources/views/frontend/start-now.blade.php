@@ -5,6 +5,18 @@
 
 @push('css')
 <style>
+    @media (max-width: 500px){
+    .customClassRow {
+        left: 18px !important;
+        top: 5px !important;
+}
+}
+    @media (max-width: 500px) {
+    .customClassRow img {
+        width: 30px !important;
+        height: 30px !important;
+    }
+    }
     .row.customClassRow1{
         width: 100%;
         text-align: left;
@@ -26,9 +38,11 @@
             justify-content: end !important;
         }
         p.MsoNormal span {
-            font-size: 12px !important;
-            font-weight: 500;
+            font-size: 13px !important;
+            font-weight: 700;
             text-align: left !important;
+            font-family: 'Segoe UI Regular' !important;
+            letter-spacing: 0.5px;
         }
         h3.customClassh3 {
             margin: 4px 0px;

@@ -5,6 +5,18 @@
      <link rel="stylesheet" href="{{asset('assets/screen4.css')}}">
 <link href="{{asset('assets/mdb.css')}}" rel="stylesheet">
 <style>
+    @media (max-width: 500px){
+    .customClassRow {
+        left: 18px !important;
+        top: 5px !important;
+}
+}
+    @media (max-width: 500px) {
+    .customClassRow img {
+        width: 30px !important;
+        height: 30px !important;
+    }
+    }
     .customSetting{
         width: 842px;
         padding-left: 0px;

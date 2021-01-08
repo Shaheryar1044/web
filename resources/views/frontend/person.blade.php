@@ -1,6 +1,18 @@
 @extends('layouts.default')
 @push('css')
     <style>
+        @media (max-width: 500px){
+            .customClassRow {
+                left: 18px !important;
+                top: 5px !important;
+            }
+        }
+        @media (max-width: 500px){
+            .customClassRow img {
+                width: 30px !important;
+                height: 30px !important;
+            }
+        }
         body {
             font-family: Montserrat;
         }
@@ -48,9 +60,11 @@
             border: 2px solid #E74218;
             padding: 12px 20px;
             width:fit-content;
+            width:-moz-fit-content;
             margin: 15px auto;
             padding-bottom: 0px;
-            min-width: fit-content%;
+            min-width: 530px;
+            min-width: -moz-fit-content;
         }
         .btnCustomChoose{
             color: #fff;
@@ -109,6 +123,39 @@
                 width: 100%;
                 margin: 0 auto;
                 padding-bottom: 0px;
+            }
+
+        }
+        @media (max-width: 766px) and  (min-width: 320px){
+            .countdown{
+                width: 100% !important;
+            }
+        }
+        @media (max-width: 500px) {
+            .customClassRow img{
+                width: 30px !important;
+                height: 30px !important;
+            }
+            .customRowAlign{
+                display: block;
+            }
+            .top-section .container-fluid img{
+                height: 37px !important;
+                width: 37px !important;
+                left: 96px !important;
+                top: 2px !important;
+            }
+            a#navbarDropdown {
+                margin: 0px !important;
+                padding: 0px !important
+            }
+
+            .customClassRow{
+                left: 18px !important;
+                top: 5px !important;
+            }
+            .countdown{
+                margin: -36px auto !important;
             }
         }
                 @import url('https://fonts.googleapis.com/css?family=Montserrat');
@@ -208,11 +255,12 @@
 }
 @media (max-width: 767px) {
     .styleContainer{
-        margin-top: 58px;
+        margin-top: 3px;
     }
 }
 .redBox{
     width: fit-content;
+    width: -moz-fit-content;
     word-wrap: break-word;
     margin: auto;
     border: 1px solid #E74218;
@@ -284,13 +332,13 @@
             <div class="customBorderBox">
                 @if(isset($adventure) && $adventure->attendees == 1)
                     <div class="row customRowAlign">
-                        <div class="col-md-6 col-sm-4 col-xs-12">
+                        <div class="col col-sm-4 col-xs-12">
                             <span class="teams">{{__('common.text10')}} 1</span>
                         </div>
-                        <div class="col-md-3 col-sm-4 col-xs-12">
+                        <div class="col col-sm-4 col-xs-12">
                             <span class="members">1 {{__('common.text9')}}</span>
                         </div>
-                        <div class="col-md-3 col-sm-4 col-xs-12">
+                        <div class="col col-sm-4 col-xs-12">
                             <button class="btnCustomChoose" onclick="chooseOption()">{{__('common.text8')}}</button>
                         </div>
                     </div>
@@ -302,14 +350,14 @@
 
                         <div class="row customRowAlign">
 
-                            <div class="col-md-6">
+                            <div class="col">
                                 <span class="teams"> {{$group->name}}</span>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col">
                                 <span class="members">{{count($group->users)}}/{{$adventure->users_per_group}} {{__('common.text9')}}</span>
                             </div>
 
-                            <div class="col-md-3">
+                            <div class="col">
                                 @if(count($group->users) < $adventure->users_per_group && !count($user->groups))
                                 <button class="btnCustomChoose" onclick="chooseOption('{{$group->id}}')">{{__('common.text8')}}</button>
                                 @else
